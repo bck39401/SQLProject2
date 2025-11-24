@@ -6,10 +6,6 @@ Members: Ben Kim, Jackson Avey, Christian Hertzig, Success Onichabor, Drew Vajda
 ## Scenario
 The task at hand is to model and build a relational database for the general operations of a network of bike stores. The central entity in the model is the Store entity, representing each individual location where bikes and related products are sold. Each store manages its stock of products, including details such as quantity, category, and brand. The system also tracks orders placed by customers, consisting of multiple order items tied to specific products. Additionally, employees are associated with each store to manage sales and inventory. The product detail entity provides descriptive information about each item, while the categories and brands entities classify and group products effectively. Our goal is to accurately model these relationships, populate the database with sample data, and perform queries that yield useful insights into sales performance, inventory management, and customer purchasing trends across all stores.
 
-
-
-
-
 ## Data Model
 Explanation:
 The Bike Store data model captures how products, customers, employees, and orders interact across multiple store locations. It is built around a set of well-defined relationships that mirror the real-world structure of a retail business. At the heart of the design is the Product table, which connects to several entities. Each product belongs to exactly one Brand and one Category, forming two one-to-many relationships from Product to Brand and Category. This means a single brand or category can be associated with many products, but each product can only have one brand and one category. The Product_Detail table is linked to Product through a one-to-one relationship because each product has a unique set of detailed attributes such as model year and list price that apply to that specific item only.
@@ -33,3 +29,7 @@ Overall, this model efficiently supports business operations such as tracking sa
 ## Five Complex Queries
 
 ## Database Info Table
+
+## Tableau Visualizations + Justifications + Questions
+
+The Name of the Database is: cs_bck81809
