@@ -28,6 +28,107 @@ Overall, this model efficiently supports business operations such as tracking sa
 
 ## Five Complex Queries
 
+### Query 1
+
+```sql
+SELECT 
+    product.product_id,
+    product.product_name,
+    stock.quantity,
+    MAX(orders.order_date) AS last_order_date
+FROM stock
+JOIN product
+    ON stock.product_id = product.product_id
+LEFT JOIN order_item
+    ON product.product_id = order_item.product_id
+LEFT JOIN orders
+    ON order_item.orders_id = orders.order_id
+WHERE 
+    stock.store_id = 1
+    AND stock.quantity > 0
+GROUP BY
+    product.product_id,
+    product.product_name,
+    stock.quantity
+ORDER BY 
+    last_order_date DESC;
+```
+### Query 2
+
+```sql
+CREATE VIEW ProductPrices AS
+SELECT 
+    product.product_id, 
+    product.product_name, 
+    brand.brand_name, 
+    product_details.list_price
+FROM product
+JOIN brand 
+    ON product.brand_id = brand.brand_id
+JOIN product_details 
+    ON product_details.product_id = product.product_id;
+
+SELECT *
+FROM product_details
+WHERE list_price > 500
+ORDER BY list_price DESC;
+```
+### Query 3 
+
+```sql
+SELECT 
+    customer.customer_id, 
+    customer.first_name, 
+    customer.last_name, 
+    COUNT(orders.order_id) AS TotalOrders
+FROM customer
+JOIN orders
+    ON orders.customer_id = customer.customer_id
+GROUP BY
+    customer.customer_id, 
+    customer.first_name, 
+    customer.last_name
+HAVING COUNT(orders.order_id) >= 2
+ORDER BY TotalOrders DESC;
+```
+### Query 4
+
+```sql
+SELECT 
+    stores.stores_id AS storeID, 
+    stores.store_name, 
+    COUNT(DISTINCT stock.product_id) AS number_of_products_in_stock
+FROM stores
+JOIN stock 
+    ON stores.stores_id = stock.store_id
+GROUP BY 
+    stores.stores_id, 
+    stores.store_name
+HAVING COUNT(DISTINCT stock.product_id) > 20
+ORDER BY number_of_products_in_stock DESC;
+```
+
+### Query 5
+
+```sql
+SELECT 
+    product.product_id, 
+    product.product_name, 
+    SUM(order_item.quantity) AS total_units_sold, 
+    SUM(order_item.quantity * product_details.list_price) AS total_revenue
+FROM product 
+JOIN product_details
+    ON product.product_id = product_details.product_id
+JOIN order_item
+    ON product.product_id = order_item.product_id
+WHERE 
+    order_item.quantity > 0
+GROUP BY 
+    product.product_id, 
+    product.product_name
+ORDER BY total_revenue DESC;
+```
+
 ## Database Info Table
 
 | Database Information     | Query 1 | Query 2 | Query 3 | Query 4 | Query 5 |
