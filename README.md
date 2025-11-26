@@ -29,11 +29,9 @@ Overall, this model efficiently supports business operations such as tracking sa
 ## Five Complex Queries
 
 ## Database Info Table
-## Query Requirements Table
 
-| Requirement              | Query 1 | Query 2 | Query 3 | Query 4 | Query 5 |
+| Database Information     | Query 1 | Query 2 | Query 3 | Query 4 | Query 5 |
 |--------------------------|:-------:|:-------:|:-------:|:-------:|:-------:|
-| Database information     |   x     |   x     |         |         |   x     |
 | Multiple table join      |   x     |   x     |         |   x     |   x     |
 | Create view              |         |   x     |         |         |         |
 | Group By, Aggregation    |   x     |         |   x     |   x     |   x     |
