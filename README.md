@@ -29,6 +29,26 @@ Overall, this model efficiently supports business operations such as tracking sa
 ## Five Complex Queries
 
 ## Database Info Table
+## Query Requirements Table
+
+| Requirement              | Query 1 | Query 2 | Query 3 | Query 4 | Query 5 |
+|--------------------------|:-------:|:-------:|:-------:|:-------:|:-------:|
+| Database information     |   x     |   x     |         |         |   x     |
+| Multiple table join      |   x     |   x     |         |   x     |   x     |
+| Create view              |         |   x     |         |         |         |
+| Group By, Aggregation    |   x     |         |   x     |   x     |   x     |
+| Join                     |   x     |   x     |   x     |   x     |   x     |
+
+### Query 1 Screenshot
+The query starts by joining stock and product so we can see exactly which items a specific store carries and the quantity currently available. It then connects order_item and orders to each product, which lets us pull the most recent order date for every item that has ever been purchased. The query links stock with product to show which items the store has and how many are available. It also joins order_item and orders so we can see the most recent time each product was ordered. This helps the business track what’s selling, what’s sitting, and when to reorder.
+
+![Query 1](./Screenshots/query1.png)
+
+### Query 2 Screenshot
+This query creates a view that pulls together product IDs, names, brands, and list prices from the product, brand, and product_details tables. After defining the view, I run a query to show only the products priced over 500 so I can quickly see the higher-priced items. This helps the business identify premium products and compare pricing across different brands.
+
+![Query 2](./Screenshots/query2.png)
+
 
 ## Tableau Visualizations
 ![TableauVisualizationsSQLProject2](https://github.com/user-attachments/assets/0090e163-342f-43c2-9e6e-9e5096c06999)
