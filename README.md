@@ -49,6 +49,22 @@ This query creates a view that pulls together product IDs, names, brands, and li
 
 ![Query 2](./Screenshots/query2.png)
 
+### Query 3 Screenshot
+This query joins customer and orders to find customers who have placed at least two orders. By grouping by each customer and counting their orders, it returns the customer ID, first name, last name, and total number of orders for the most active shoppers. This helps the business quickly spot loyal customers for rewards or targeted marketing.
+
+![Query 3](./Screenshots/query3.png)
+
+### Query 4 Screenshot
+This query joins stores and stock to count how many distinct products each store has in stock. It filters to only show stores with more than 20 different products and orders them from the most stocked to the least. This helps the business compare store inventory levels and see which locations carry the widest product range.
+
+![Query 4](./Screenshots/query4.png)
+
+### Query 5 Screenshot
+This query joins product, product_details, and order_item to calculate total units sold and total revenue for each product. It only includes rows where quantity sold is positive and then sorts products from highest to lowest revenue. This lets the business easily see top-earning products and make smarter decisions about pricing, promotions, and inventory.
+
+![Query 5](./Screenshots/query5.png)
+
+
 
 ## Tableau Visualizations
 ![TableauVisualizationsSQLProject2](https://github.com/user-attachments/assets/0090e163-342f-43c2-9e6e-9e5096c06999)
