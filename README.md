@@ -39,27 +39,27 @@ Overall, this model efficiently supports business operations such as tracking sa
 | Group By, Aggregation    |   x     |         |   x     |   x     |   x     |
 | Join                     |   x     |   x     |   x     |   x     |   x     |
 
-### Query 1 Screenshot
+### [Query 1: In-stock products and last order date](./Queries/query1.sql)
 The query starts by joining stock and product so we can see exactly which items a specific store carries and the quantity currently available. It then connects order_item and orders to each product, which lets us pull the most recent order date for every item that has ever been purchased. The query links stock with product to show which items the store has and how many are available. It also joins order_item and orders so we can see the most recent time each product was ordered. This helps the business track what’s selling, what’s sitting, and when to reorder.
 
 ![Query 1](./Screenshots/query1.png)
 
-### Query 2 Screenshot
+### [Query 2: View of list prices + products over 500](./Queries/query2.sql)
 This query creates a view that pulls together product IDs, names, brands, and list prices from the product, brand, and product_details tables. After defining the view, I run a query to show only the products priced over 500 so I can quickly see the higher-priced items. This helps the business identify premium products and compare pricing across different brands.
 
 ![Query 2](./Screenshots/query2.png)
 
-### Query 3 Screenshot
+### [Query 3: Customers with 2 or more orders](./Queries/query3.sql)
 This query joins customer and orders to find customers who have placed at least two orders. By grouping by each customer and counting their orders, it returns the customer ID, first name, last name, and total number of orders for the most active shoppers. This helps the business quickly spot loyal customers for rewards or targeted marketing.
 
 ![Query 3](./Screenshots/query3.png)
 
-### Query 4 Screenshot
+### [Query 4: Stores with more than 20 products](./Queries/query4.sql)
 This query joins stores and stock to count how many distinct products each store has in stock. It filters to only show stores with more than 20 different products and orders them from the most stocked to the least. This helps the business compare store inventory levels and see which locations carry the widest product range.
 
 ![Query 4](./Screenshots/query4.png)
 
-### Query 5 Screenshot
+### [Query 5: Total units sold and revenue per product](./Queries/query5.sql)
 This query joins product, product_details, and order_item to calculate total units sold and total revenue for each product. It only includes rows where quantity sold is positive and then sorts products from highest to lowest revenue. This lets the business easily see top-earning products and make smarter decisions about pricing, promotions, and inventory.
 
 ![Query 5](./Screenshots/query5.png)
