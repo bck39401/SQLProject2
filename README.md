@@ -166,7 +166,9 @@ This query joins product, product_details, and order_item to calculate total uni
 
 
 ## Tableau Visualizations
-![TableauVisualizationsSQLProject2](https://github.com/user-attachments/assets/0090e163-342f-43c2-9e6e-9e5096c06999)
+![TableauVisualizationsSQLProject2](https://github.com/user-attachments/assets/0090e163-342f-43c2-9e6e-9e5096c06999)![SQLProject2VisualizationsVersion2](https://github.com/user-attachments/assets/84b7de69-b648-425a-9435-391aad89e9fc)
+
+
 
 ## Visualization One: Total Sales Revenue by Bike Type
 Description:
